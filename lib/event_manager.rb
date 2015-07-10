@@ -3,14 +3,7 @@ puts "EventManager Initialized!"
 
 
 def clean_zipcode(zipcode)
-  if zipcode.nil?
-    zipcode = "000000"
-  elsif   
-    zipcode.length < 5
-    zipcode = zipcode.rjust 5, "0"
-  elsif zipcode.length > 5
-    zipcode = zipcode[0..4]
-  end
+  zipcode.to_s.rjust(5,"0")[0..4]
 end
 
 
